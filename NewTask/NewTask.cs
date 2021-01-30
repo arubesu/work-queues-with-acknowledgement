@@ -13,8 +13,8 @@ namespace NewTask
       using (var connection = factory.CreateConnection())
       using (var channel = connection.CreateModel())
       {
-        channel.QueueDeclare(queue: "hello",
-                                 durable: false,
+        channel.QueueDeclare(queue: "task_queue",
+                                 durable: true,
                                  exclusive: false,
                                  autoDelete: false,
                                  arguments: null);
